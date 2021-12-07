@@ -66,13 +66,13 @@ class Charts extends Component {
 
     render() {
 
-        const {data, data2} = this.state;
+        const {data} = this.state;
+
+        const MaxHeight = Math.max(...data.map(data=>data.maximum_wave_height));
 
         var blue = "#2a80eb";
 
-        function formatData(tickItem) {
-
-        }
+        
 
         return (
             <Fragment>
@@ -102,6 +102,10 @@ class Charts extends Component {
                                 </AreaChart>
                             </ResponsiveContainer>
                         </Col>
+                    </Row>
+                    <Row className="mt-5 text-center">
+
+                        <Col><p>Summary: Maximum wave height is {MaxHeight} m</p></Col>
                     </Row>
                     
                 </Container>
